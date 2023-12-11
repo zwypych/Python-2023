@@ -47,3 +47,15 @@ s2.join(["Ala", "ma", "kota"])
 3 in l
 
 l.insert(2, 100)
+
+
+#zadanie
+lista = []
+while True:
+    i = input("Podaj slowo")
+    if (i == ""):
+        break
+    lista.append(i)
+
+lista.sort(key=str)
+    print(lista)
