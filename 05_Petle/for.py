@@ -31,3 +31,11 @@ for a in range(1, 100):
         print(f" {a} liczba jest dobra")
     # else:
     #     print(f" {a} liczba jest zla")
+
+#zadanie 2
+number = input()
+suma = 0
+    for char in str(number):
+        print(f' to jest znak {char}, to jest suma {suma}')
+        suma += int(char)
+    print(suma)
