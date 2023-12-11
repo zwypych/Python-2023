@@ -49,7 +49,11 @@ s2.join(["Ala", "ma", "kota"])
 l.insert(2, 100)
 
 
-#zadanie
+'''
+zadanie 1
+#stwórz pętle pobierającą napisy z wejścia aż do napotkania pustego napisu; 
+wypisz listę posortowaną alfabetycznie wczytanych napisów
+'''
 lista = []
 while True:
     i = input("Podaj slowo")
@@ -58,4 +62,23 @@ while True:
     lista.append(i)
 
 lista.sort(key=str)
+print(lista)
+
+'''
+zadanie 2
+stwórz pętle pobierającą liczby z wejścia aż do napotkania pustego napisu; 
+wypisz ostatnią parzystą
+'''
+lista = []
+while True:
+    i = int(input("Podaj slowo"))
+    if (i == ""):
+        break
+    lista.append(i)
+for l in lista:
+    lista.sort(reverse=True)
+    if l % 2 == 0:
+        break
+    print
+
 print(lista)
