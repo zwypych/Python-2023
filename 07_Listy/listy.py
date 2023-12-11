@@ -58,4 +58,4 @@ while True:
     lista.append(i)
 
 lista.sort(key=str)
-    print(lista)
+print(lista)
