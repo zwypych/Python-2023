@@ -9,13 +9,12 @@ else:
     print('Not three')
 
 if a == 3:
-   print("three")
+    print("three")
 else:
-   if a == 4:
-       print("four")
-   else:
-       print('Not three or four')
-
+    if a == 4:
+        print("four")
+    else:
+        print('Not three or four')
 
 n = int(input('Podaj liczbę'))
 print(n)
@@ -51,3 +50,12 @@ else:
     print(f'{i} jest nieparzyste')
 
 
+#zadanko
+a = int(input("podaj liczbe"))
+b = int(a // 10)
+c = int(a % 10)
+i = b + c
+if (i % 7 == 0 and a % 2 == 0):
+    print("liczba jest dobra")
+else:
+    print("liczba jest zla")
