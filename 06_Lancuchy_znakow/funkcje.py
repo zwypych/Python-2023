@@ -29,3 +29,21 @@ napis = "ala ma kota"
 napis = napis.title().replace('Ala', 'Tomek')
 napis
 
+#zadanie - choinka
+liczba = int(input("Podaj liczbe"))
+for i in range(1, liczba):
+    print(f'{-i*" "}{i*"*"}{i*" "}')
+for j in range(1, 3):
+        print(f'{-j * " "}{j * "*"}')
+
+#rozwiazanie wspolne
+n = int(input("Podaj wysokosc:"))
+for i in range(n):
+    print(f'{" "*(n-i)}{(2*i+1)*"*"}')
+for i in range(n):
+    if i == 2:
+        break
+    print(f'{" " * (n - i)}{(2 * i + 1) * "*"}')
+
+
+
