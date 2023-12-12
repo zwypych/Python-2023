@@ -174,3 +174,12 @@ else:
     lista_2.append(nazwy_dziesiatek[d])
     lista_2.append(nazwy_jednosci[j])
 print(" ".join(lista_2) )
+
+################################
+
+nastka = 15
+if  nastka in range(11, 20):
+    print("nastka")
+
+if  11 < nastka < 20:
+    print("nastka")
