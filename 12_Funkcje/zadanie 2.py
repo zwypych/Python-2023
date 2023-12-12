@@ -10,3 +10,11 @@ def alphabet_range(start, end, step):
     return [chr(x) for x in range(ord(start), ord(end), step)]
 
 alphabet_range("a", "f", 1)
+
+#generator
+def alphabet_range(start, end, step):
+    return (chr(x) for x in range(ord(start), ord(end), step))
+
+alphabet_range("a", "f", 1)
+
+list(alphabet_range("a", "f", 1))
