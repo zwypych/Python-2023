@@ -20,3 +20,5 @@ slownik = {z: 3}  # Błąd - tuple moge byc bo moze sie zmienic, lub robie sie f
 fz = frozenset(z)
 slownik = {fz: 3}
 slownik
+zwykly_zbior = set(fz)
+zwykly_zbior # z zamrozonego zbioru stworzylismy znowu zwykly zbior
