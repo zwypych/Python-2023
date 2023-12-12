@@ -138,7 +138,7 @@ setki = {0: "", 100: "sto", 200: "dwiescie", 300: "trzysta", 400: "czterysta", 5
 
 n = int(input("Wpisz liczbe:"))
 napis = setki[n-n % 100]
-n = n%100
+n %= 100
 if n in range(11, 20):
     napis += nastki[n]
 else:
