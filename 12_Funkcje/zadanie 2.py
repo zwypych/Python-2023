@@ -6,6 +6,7 @@ ord - podaje kod calkowity danego znaku
 chr - podaje znak odpowiadający danemu kodowi całkowitemu'''
 
 
+def alphabet_range(start, end, step):
+    return [chr(x) for x in range(ord(start), ord(end), step)]
 
-def alphabet_range():
-    print(list)
+alphabet_range("a", "f", 1)
