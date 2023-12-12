@@ -16,7 +16,7 @@ z & z3
 z2 - z
 z2 ^ z3
 
-slownik = {z: 3}  # Błąd
+slownik = {z: 3}  # Błąd - tuple moge byc bo moze sie zmienic, lub robie sie frozenset jak nizej
 fz = frozenset(z)
 slownik = {fz: 3}
 slownik
