@@ -5,15 +5,14 @@ użyć
 ord - podaje kod calkowity danego znaku
 chr - podaje znak odpowiadający danemu kodowi całkowitemu'''
 
-
 def alphabet_range(start, end, step):
-    return [chr(x) for x in range(ord(start), ord(end), step)]
+    return [chr(x) for x in range(ord(start), ord(end), step)] #list comprehension
 
 alphabet_range("a", "f", 1)
 
 #generator
 def alphabet_range(start, end, step):
-    return (chr(x) for x in range(ord(start), ord(end), step))
+    return (chr(x) for x in range(ord(start), ord(end), step)) #okragle nawiasy bo generator a nie list comprehension
 
 alphabet_range("a", "f", 1)
 
