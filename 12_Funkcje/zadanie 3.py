@@ -47,6 +47,24 @@ def _sklej(lista):
     return [t[1] for t in lista] #wyrzuca element slowny kązdej listy np. trzydziesci z (30, 'trzydziesci')
 
 
+def slownie(n):
+    jednosci = n % 1000
+    tysiace = n // 1000 % 1000
+    miliony = n // 1_000_000 % 1000
+    miliardy = n // 1_000_000_000 % 1000
+
+    ret = []
+    if miliardy:
+        ret += (_slownie999(miliardy, jednostki=['miliard', 'miliardy', 'miliardów', ]))
+    if miliony:
+        ret += (_slownie999(miliony, jednostki=['milion', 'miliony', 'milionów', ]))
+    if tysiace:
+        ret += (_slownie999(tysiace, jednostki=['tysiac', 'tysiące', 'tysięcy', ]))
+    if jednosci:
+        ret += (_slownie999(jednosci, jednostki=['', '', '']))
+
+    return " ".join(_sklej(ret)).strip()
+
 print(_slownie999(3))
 print(_slownie999(13))
 print(_slownie999(33))
@@ -59,3 +77,7 @@ print(
     _sklej(_slownie999(133))
 )
 
+print(slownie(123))
+print(slownie(123_456))
+print(slownie(123_456_789))
+print(slownie(123_456_789_012))
