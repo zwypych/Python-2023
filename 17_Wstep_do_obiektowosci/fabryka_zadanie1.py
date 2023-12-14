@@ -1,3 +1,5 @@
+import sys
+
 class Instrument:
     def mysound(self):
         return "!&$%$^%*"
@@ -33,9 +35,6 @@ class Saxophone(Instrument):
         return "Fiufiu"
 
 
-instrument = globals()[input("Podaj instrument:")]('Bob')
-instrument.play()
-
 if __name__ == '__main__':
     orkiestra = []
     for wpis in sys.argv[1:]:
@@ -46,4 +45,4 @@ if __name__ == '__main__':
     for instrument in orkiestra:
         instrument.play()
 
-# w terminalu: python fabryka_cli.py Bill@Guitar John@Guitar Bob@Drums
+# w terminalu: python fabryka_zadanie1.py Bill@Guitar John@Guitar Bob@Drums
