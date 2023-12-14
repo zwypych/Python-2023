@@ -18,6 +18,8 @@ Base = automap_base()
 db_url = "postgresql+psycopg2://my_user:secret@127.0.0.1/my_database"
 engine = create_engine(db_url)
 
+engine.echo = True #pokazuje co sie dzieje w sqlu
+
 # reflect the tables
 Base.prepare(engine, reflect=True)
 FoodItem = Base.classes.fooditem
