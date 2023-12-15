@@ -9,19 +9,13 @@ data = []
 
 @app.route('/')
 def hello():
-    name = ""
-    args = request.args
-    print(args)
-    params = [{"key": k, "value": v} for k, v in args.items()]
-    if "name" in args.keys():
-        name = args["name"]
-    print(params)
-    return render_template('form_zadanko.html', params=params, name=name)
+    return render_template('form_zadanko.html', imie="")
 
 @app.route('/add')
 def add():
     args = request.args
     print(args)
+    imie = args["name"]
     data.append(args["name"])
-
-    return render_template('form_zadanko.html', data=data, tytul="Dodano pozycję do listy")
+    print(imie)
+    return render_template('form_zadanko.html', name=imie)
