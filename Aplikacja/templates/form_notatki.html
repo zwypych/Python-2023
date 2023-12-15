@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+
+        input[type=text] {
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #4CAF50;
+            padding: 4px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 8px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button2 {
+            background-color: white;
+            color: red;
+            border: 2px solid #4CAF50;
+        }
+      ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\25FC";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #4CAF50; /* Change the color */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 2em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>Zapis Notatek</h1>
+{% if no_error %}
+<h2>{{ tytul }}</h2>
+{% else %}
+<h2 style="color: red">{{ tytul }}</h2>
+{% endif %}
+
+<form action="/add_tag">
+    <label for="name">Znacznik:</label>
+    <input type="text" id="name" name="name" value="Wpisz Znacznik"><br>
+    <input class="button button1" type="submit" value="Dodaj Znacznik!">
+</form>
+
+
+<!--
+<form action="/remove">
+    <label for="name">Notatka:</label>
+    <input type="text" id="name" name="name" value="Usun notatke"><br>
+    <input class="button button2" type="submit" value="Usun !">
+</form>
+!-->
+
+
+<form action="/remove_tag">
+    <label for="values">wybierz znacznik:</label>
+    <select name="values" id="values">
+        {% for item in data %}
+        <option value="{{ item.tagname }}">{{ item.tagname }}</option>
+        {% endfor %}
+    </select>
+    <input class="button button2" type="submit" value="Usun">
+</form>
+
+
+<ul>
+    {% for item in data %}
+    <li>{{ item }}</li>
+    {% else %}
+    no items
+    {% endfor %}
+</ul>
+
+<hr>
+
+<form action="/add_note">
+    <label for="name">Notatka:</label>
+    <input type="text" id="title" name="title" value="Wpisz Tytuł"><br>
+    <input type="text" id="body" name="body" value="Wpisz Tresc"><br>
+    <input class="button button1" type="submit" value="Dodaj Notatke!">
+</form>
+
+
+<ul>
+    {% for item in data2 %}
+    <li>
+        {{ item.title }}|{{item.body}}
+        {%for tag in item.tags%}{{tag.tagname}}<a href = "/remove_tag_note?note_id={{item.id}}&tagname={{tag.tagname}}">#</a>
+
+        {%endfor%}
+        <form action="/assign_tag">
+            <label for="tagname">wybierz znacznik:</label>
+            <select name="tagname" id="tagname">
+                {% for item in data %}
+                <option value="{{ item.tagname }}">{{ item.tagname }}</option>
+                {% endfor %}
+            </select>
+            <input class="button button2" type="submit" value="Assign">
+            <input type="hidden" name="note_id" value="{{item.id}}">
+        </form>
+
+    </li>
+    {% else %}
+    no items
+    {% endfor %}
+</ul>
+
+</body>
+</html>
