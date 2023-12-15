@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 data = [{'value': 1, 'state': False},
         {'value': 2, 'state': True},
-        {'value': 3, 'state': True}
+        {'value': 3, 'state': True},
+        {'value': 4, 'state': True}
         ]
 
 
