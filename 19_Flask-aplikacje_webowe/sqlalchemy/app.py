@@ -1,4 +1,5 @@
-# Przy pierwszym uruchomieniu:  flask --app app shell
+# Przy pierwszym uruchomieniu:
+# flask --app app shell
 # A następnie:
 # >>> db.create_all()
 # >>> exit()
